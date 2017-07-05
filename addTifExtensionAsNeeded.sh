@@ -1,0 +1,1 @@
+for file in $(find /Volumes/DroboFW/cinefiles-backed-up/REPLACEMENTS_5SovietFilms -type f ! -iname "*.tif"); do mv $file $file".tif"; done

@@ -26,15 +26,21 @@ OK, so the base64 idea worked fine with a small test batch, but running against 
 
 Now the `mogrify` command outputs thumbnail .png files all set to the same aspect ratio into `images/thumbs/`. It still has to load everything at once but (at least locally) it loads fine for now. I also have the files renamed as a hash of the original filepath (to account for possible accidental duplicates? i.e.:  `140225Maya/12345.p1.300gray.tif` vs `161120Cassie/12345.p1.300gray.tif` ). In the next iteration I gotta add the hash to the CSV though so that there is a link between the filename and the thumbnail. Or just skip the hash part since it's probably not necessary.
 
+## Update 7/5/2017
+
+I added a couple of handy steps: `index.html` is updated with the most current csv as `log.py` runs. There is a text file that notes the date of the last log process that helps with this. Also, the logger checks a running list of filepath hashes to see whether or not to log a given file. This might be better accomplished by moving logged files to a different path on the DROBO rather than having to check the huge text file for each step. 
+
+This took something like 4 hours to run against the whole set of 29,000 backup images we have locally (2008-present?). The HTML kills Chrome, but works locally in Firefox. I should probably start looking for a different solution (that will also hpoefully be more stable long-term).
+
 ## TO DO
 
 This is in progress!
 
 The python script was originally fed into a Mac automator applet, so there's a request for the filepath to be logged. I need to make it run using crontab and the resulting html should be pushed to a static (password-protected) site. Need to figure out where to host that will be secure.
 
-Change the html in `index.html` to look for today's date in the csv filepath to match the latest CSV.
+~~Change the html in `index.html` to look for today's date in the csv filepath to match the latest CSV.~~ Done 6/30
 
-Add function to check for a folder (or file?) already in the log. Maybe referencing the handy hash that's available?
+~~Add function to check for a folder (or file?) already in the log. Maybe referencing the handy hash that's available?~~ Done 6/30
 
 ## Sample Screenshot
 
