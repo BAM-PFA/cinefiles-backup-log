@@ -4,7 +4,7 @@ This is a set of scripts that produce a CSV log of redundant backups of images f
 
 ## Usage
 
-Run `python log.py` to create the backup CSV, which then needs to go in the `data/` folder. Right now you have to manually change the path in `index.html` to the latest log CSV.
+Run `python log.py` to create the backup CSV, which is saved in the `data/` folder. Thumbnails are saved to `images/thumbs/`.
 
 To test it locally run `python2.7 -m SimpleHTTPServer` and go to [http://localhost:8000](http://localhost:8000)
 
@@ -36,7 +36,9 @@ This took something like 4 hours to run against the whole set of 29,000 backup i
 
 This is in progress!
 
-The python script was originally fed into a Mac automator applet, so there's a request for the filepath to be logged. I need to make it run using crontab and the resulting html should be pushed to a static (password-protected) site. Need to figure out where to host that will be secure.
+~~The python script was originally fed into a Mac automator applet, so there's a request for the filepath to be logged.~~ I need to make it run using crontab and the resulting html should be pushed to a static (password-protected) site. Need to figure out where to host that will be secure.
+
+Er, find a different way entirely to do this.
 
 ~~Change the html in `index.html` to look for today's date in the csv filepath to match the latest CSV.~~ Done 6/30
 
